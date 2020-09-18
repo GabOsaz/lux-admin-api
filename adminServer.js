@@ -10,7 +10,6 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
 
 const fileUpload = require('express-fileupload');
 
@@ -24,6 +23,7 @@ const db = process.env.MONGO_URI;
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(cors());
 app.use(cookieParser());
 
 app.use('/api/signup', signup);
