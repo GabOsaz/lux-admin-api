@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 const app = express();
+app.use(cors());
 
 const fileUpload = require('express-fileupload');
 
@@ -23,7 +24,6 @@ const db = process.env.MONGO_URI;
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
-app.use(cors());
 app.use(cookieParser());
 
 app.use('/api/signup', signup);
@@ -47,12 +47,12 @@ mongoose.connect(db, {
     .catch(err => console.log(err)
 )
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-    })
-}
+// if(process.env.NODE_ENV === 'production') {
+//     app.use(express.static('client/build'));
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+//     })
+// }
 
 const port = process.env.PORT || 5060
 
