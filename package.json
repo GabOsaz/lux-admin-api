@@ -1,0 +1,29 @@
+{
+  "name": "lux_event-admin",
+  "version": "1.0.0",
+  "description": "Admin App for Lux Event Center",
+  "main": "adminServer.js",
+  "scripts": {
+    "start": "node adminServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "G5",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.22.0",
+    "concurrently": "^5.3.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "formik": "^2.1.5",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^2.2.0",
+    "moment": "^2.27.0",
+    "mongoose": "^5.10.0",
+    "react-router-dom": "^5.2.0",
+    "yup": "^0.29.3"
+  }
+}
